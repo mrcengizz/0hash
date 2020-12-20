@@ -10,21 +10,25 @@ def get_user_input():
 def brute(types,a):
     def base(a):
         try:
+            a.encode("ascii")
             decoded = base64.b64decode(a)
             print("Base 64:",decoded.decode("utf-8"))
         except:
             pass
         try:
+            a.encode("ascii")
             decoded1= base64.b32decode(a)
             print("Base 32:",decoded1.decode("utf-8"))
         except:
             pass
         try:    
+            a.encode("ascii")
             decoded2 = base64.b16decode(a)
             print("Base 16",decoded2.decode("utf-8"))
         except:
             pass
         try:    
+            a.encode("ascii")
             decoded3 = base64.b85decode(a)
             print("Base 85",decoded3.decode("utf-8"))
         except:
