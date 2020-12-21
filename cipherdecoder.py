@@ -4,10 +4,13 @@ import sys
 import optparse
 def get_user_input():
     parse_object = optparse.OptionParser()
-    parse_object.add_option("-c", "--cipher", dest="a", help="Enter cipher text")
+    parse_object.add_option("-c", "--cipher", dest="a", help="Enter cipher path txt")
     parse_object.add_option("-t", "--type", dest="types", help="Enter cipher type")
     return parse_object.parse_args()
 def brute(types,a):
+    with open(a,"r") as dosya:
+        a = dosya.read()
+        dosya.close()
     def base(a):
         try:
             a.encode("ascii")
